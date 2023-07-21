@@ -51,9 +51,10 @@
   <label> Show FGS matrix:
     <input class="check-box-style" type="checkbox" [(ngModel)]="showFGSs" (change)="hideDescriptor(showFGSs)" /> </label>
   <p></p>
-<div *ngIf="showFGSs">
   <label>Show impact-matrix key <input  class="check-box-style" type="checkbox" [(ngModel)]="matrixKey" /> </label>
   <p></p>
+<div *ngIf="showFGSs">
+
   <label>Select matrix source letter</label><select name="fgsMatrix" [(ngModel)]="riskSource.riskSource[0].letter">
     <option value="G">'G'</option>
     <option value="H">'S'</option>

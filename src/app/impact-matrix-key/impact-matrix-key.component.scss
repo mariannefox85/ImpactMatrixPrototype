@@ -24,7 +24,7 @@ th.horizontal-header {
 }
 .axesLabel {
   color: #000;
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bold;
 }
 .impact {
@@ -36,4 +36,19 @@ th.horizontal-header {
   transform: rotate(180deg);
   justify-self: end;
   padding: 0 0.25em;
+}
+.cell {
+  border: 1px solid #a1a0aaff;
+  width: 5%;
+  height: 1em;
+  //text-align: center;
+  //padding: 10% 1%;
+  //display: inline-block;
+  //margin: 0 0.1%;
+  //font-weight: bold;
+  //position: relative;
+}
+.overall-risk-key {
+  //width: 20%;
+  height: 2em;
 }

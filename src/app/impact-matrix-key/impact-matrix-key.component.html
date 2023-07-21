@@ -1,8 +1,10 @@
-<table>
+<table style="margin-top: 1em; width: 25%">
   <tr>
-    <td rowSpan="5" >
-      <div class="axesLabel likelihood">Likelihood</div>
-    </td>
+  <td rowSpan="5" >
+    <div class="axesLabel likelihood"> LIKELIHOOD </div>
+  </td>
+  </tr>
+  <tr>
 
     <th class="vertical-header" >HIGH</th>
 
@@ -39,6 +41,9 @@
     <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.amber}">
 
     </td>
+
+
+
   </tr>
   <tr>
 
@@ -73,14 +78,65 @@
   </tr>
   <tr>
     <th class="horizontal-header"></th>
+    <th class="horizontal-header"></th>
     <th class="horizontal-header">MINIMAL</th>
     <th class="horizontal-header">MINOR</th>
     <th class="horizontal-header">SIGNIFICANT</th>
     <th class="horizontal-header">SEVERE</th>
   </tr>
 <!--  <tr>-->
-    <td colSpan="6" >
-      <div class="axesLabel impact"> Impact</div>
+  <td></td>
+  <td></td>
+    <td colSpan="4" >
+      <div class="axesLabel impact"> IMPACT</div>
     </td>
 <!--  </tr>-->
+
+  <tr>
+    <td></td>
+    <td ></td>
+    <td colSpan="4">
+      <div class="line-3">
+        <hr>
+      </div>
+    </td>
+
+  </tr>
+
+<!--</table>-->
+
+<!--<table>-->
+  <tr>
+    <td ></td>
+    <td></td>
+    <td class="cell overall-risk-key" [ngStyle]="{ backgroundColor: colorConfig.green}">
+
+    </td>
+
+    <td class="cell" [ngStyle]="{ backgroundColor: colorConfig.yellow}">
+
+    </td >
+
+    <td class="cell" [ngStyle]="{ backgroundColor: colorConfig.amber}">
+    </td>
+
+    <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.red}">
+
+    </td>
+  </tr>
+  <tr>
+    <th></th>
+    <th></th>
+    <th class="horizontal-header">MINIMAL</th>
+    <th class="horizontal-header">MINOR</th>
+    <th class="horizontal-header">SIGNIFICANT</th>
+    <th class="horizontal-header">SEVERE</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td [colSpan]="4" style="text-align: center; font-weight: bold">
+      OVERALL FLOOD RISK
+    </td>
+  </tr>
 </table>
