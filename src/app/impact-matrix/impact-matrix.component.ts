@@ -24,6 +24,7 @@ export class ImpactMatrixComponent implements OnInit {
   impactArrow: string;
   // @ts-ignore
   matrixDescriptionText: string;
+
   // @ts-ignore
   warningColour: string;
   // @ts-ignore
@@ -41,6 +42,7 @@ export class ImpactMatrixComponent implements OnInit {
   }
 
   getMatrixTick(warningColour: string) {
+    warningColour = this.getWarningColour(this.impact,this.likelihood);
     return `./assets/${warningColour === 'red' ? 'nswws_tick_white.svg' : 'nswws_tick.svg'}`;
   }
 
@@ -100,5 +102,34 @@ export class ImpactMatrixComponent implements OnInit {
       }
     }
     return riskLetters.join(' ');
+  }
+
+  getCellColor =(impact: number, likelihood: number) => {
+  const position = [impact, likelihood].join('');
+  switch (position) {
+  case '44':
+    return {
+      background: '#cc0033',
+    };
+  case '43':
+  case '42':
+  case '34':
+  case '33':
+    return {
+      background: '#ff9900',
+    };
+  case '23':
+  case '24':
+  case '31':
+  case '32':
+  case '41':
+    return {
+      background: '#ffe923',
+    };
+  default:
+    return {
+      display: 'none',
+    }
+  }
   }
 }

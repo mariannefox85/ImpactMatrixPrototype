@@ -84,11 +84,11 @@
     </tr>
   </table>
   <p class="impactMatrix" *ngIf="matrixDescriptionText !== '' && descriptor">
-        <span [ngStyle]="{ backgroundColor: warningColour }" class="cell">
-          <img src="{{ imgSrc }}" />
+        <span [ngStyle]="getCellColor(impact, likelihood)" class="cell">
+          <img src="{{ getMatrixTick(warningColour) }}" />
         </span>
     <svg viewBox="0 0 100 10">
-      <text x="0" y="7">{{ matrixDescriptionText }}</text>
+      <text x="0" y="7">{{ getMatrixDescriptor(impact, likelihood) }}</text>
     </svg>
   </p>
 </div>

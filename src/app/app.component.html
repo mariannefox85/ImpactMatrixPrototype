@@ -1,44 +1,95 @@
 
 <div style="width: 20%; margin: 2em">
+
 <app-impact-matrix
-  [descriptor]="descriptor"
-  [impact]="impact"
-  [likelihood]="likelihood"
-  [colorConfig]="colorConfig"
+      [descriptor]="descriptor"
+      [impact]="impact"
+      [likelihood]="likelihood"
+      [colorConfig]="colorConfig"
+      [riskSource]="riskSource"
+      [showFGSs]="showFGSs"
+    ></app-impact-matrix>
 
-  [showFGSs]="showFGSs"
-  [riskSource]="riskSource"
-></app-impact-matrix>
+  </div>
 
 
+<div style=" box-shadow: antiquewhite; width: 50% ;padding:1em; border-radius: 25px;
+     background: lightgray;
+     font-family: sans-serif;
+    "
+      >
+  <h3>Change matrix values</h3>
+  <label *ngIf="!showFGSs" > Show NSWWS Descriptor text:
+    <input  class="check-box-style" type="checkbox" [(ngModel)]="descriptor" /> </label>
+<p></p>
+  <p *ngIf="!showFGSs" >Impact: <input type="number" max="4" min="2" [(ngModel)]="impact" /></p>
+  <p *ngIf="!showFGSs" >
+    Likelihood:
+    <input type="number" max="4" min="1" [(ngModel)]="likelihood" />
+  </p>
 
-<div style="margin-top: 1em" >
-  <h1>Change inputs</h1>
-  <p *ngIf="!showFGSs" > Show NSWWS Descriptor:
-    <input type="checkbox" [(ngModel)]="descriptor" /> {{descriptor}}</p>
 
-  <p> Show FGS matrix:
-    <input type="checkbox" [(ngModel)]="showFGSs" (change)="hideDescriptor(showFGSs)" /> {{showFGSs}}</p>
-
-  <p > Change green cell colors:
+  <label > Change green cell colors:
     <input type="color" #colorInput placeholder="Enter JSON object here" [(ngModel)]="colorConfig.green">
+  </label>
+  <p></p>
 
-
-  <p > Change yellow cell colors:
-    <input type="color" #colorInput placeholder="Enter JSON object here" [(ngModel)]="colorConfig.yellow">
-  <p > Change amber cell colors:
+  <label > Change yellow cell colors:
+    <input  type="color" #colorInput placeholder="Enter JSON object here" [(ngModel)]="colorConfig.yellow">
+  </label>
+  <p></p>
+  <label > Change amber cell colors:
     <input type="color" #colorInput placeholder="Enter JSON object here" [(ngModel)]="colorConfig.amber">
+  </label>
+  <p></p>
 
 
-  <p > Change red cell colors:
+  <label > Change red cell colors:
     <input type="color" #colorInput placeholder="Enter JSON object here" [(ngModel)]="colorConfig.red">
+  </label>
+  <p></p>
+  <label> Show FGS matrix:
+    <input class="check-box-style" type="checkbox" [(ngModel)]="showFGSs" (change)="hideDescriptor(showFGSs)" /> </label>
+  <p></p>
+<div *ngIf="showFGSs">
+  <label>Show impact-matrix key <input  class="check-box-style" type="checkbox" [(ngModel)]="matrixKey" /> </label>
+  <p></p>
+  <label>Select matrix source letter</label><select name="fgsMatrix" [(ngModel)]="riskSource.riskSource[0].letter">
+    <option value="G">'G'</option>
+    <option value="H">'S'</option>
+    <option value="C">'C'</option>
+  <option value="R">'R'</option>
 
-  <p>Show impact-matrix key <input type="checkbox" [(ngModel)]="matrixKey" /> {{matrixKey}}</p>
+
+  <option value="G, S">'G, S'</option>
+  <option value="G,S, R">'G,S, R'</option>
+  <option value="G, S, R, C">'G, S, R, C'</option>
 
 
+  </select>
 
+  <label>Select matrix source letter</label><select name="fgsMatrix" [(ngModel)]="riskSource.riskSource[0].matrixPosition">
+  <option value="1,1">'1,1'</option>
+  <option value="1,2">'1,2'</option>
+  <option value="1,3">'1,3'</option>
+  <option value="1,4">'1,4'</option>
 
+  <option value="2,1">'2,1'</option>
+  <option value="2,2">'2,2'</option>
+  <option value="2,3">'2,3'</option>
+  <option value="2,4">'2,4'</option>
 
+  <option value="3,1">'3,1'</option>
+  <option value="3,2">'3,2'</option>
+  <option value="3,3">'3,3'</option>
+  <option value="3,4">'3,4'</option>
+
+  <option value="4,1">'4,1'</option>
+  <option value="4,2">'4,2'</option>
+  <option value="4,3">'4,3'</option>
+  <option value="4,4">'4,4'</option>
+</select>
+</div>
 </div>
 
 
@@ -46,5 +97,5 @@
                            [colorConfig]="shellColorConfig"
                            [matrixKey] = "matrixKey"
   ></app-impact-matrix-key>
-</div>
+
 
