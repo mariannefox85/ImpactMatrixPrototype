@@ -1,0 +1,95 @@
+<div class="moImpactMatrix">
+  <table>
+    <tr>
+
+      <td rowSpan={{5}} class="likelihoodArrow" *ngIf="!showFGSs">
+        <img src={{likelihoodArrow}} />
+      </td>
+      <td rowSpan={{5}} *ngIf="showFGSs" class="likelihoodText">
+        <div class="axesLabel likelihood">Likelihood</div>
+      </td>
+
+      <td class="cell" [ngStyle]="{ backgroundColor: colorConfig.green}">
+        <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '1,4')}}</div>
+      <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.yellow}">
+        <img *ngIf="impact === 2 && likelihood === 4 && !showFGSs " [src]="getMatrixTick(warningColour)" />
+        <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '2,4')}}</div>
+
+      </td>
+      <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.amber}">
+        <img *ngIf="impact === 3 && likelihood === 4 && !showFGSs" [src]="getMatrixTick(warningColour)" />
+        <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '3,4')}}</div>
+      </td>
+      <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.red}">
+        <img *ngIf="impact === 4 && likelihood === 4 && !showFGSs " [src]="getMatrixTick(warningColour)" />
+        <div *ngIf="showFGSs" style="color: white">{{getFGSPipe(riskSource, '4,4')}}</div>
+      </td>
+
+    </tr>
+    <tr >
+
+      <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.green}">
+        <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '1,3')}}</div>
+      <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.yellow}">
+        <img *ngIf="impact === 2 && likelihood === 3 && !showFGSs" [src]="getMatrixTick(warningColour)" />
+        <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '2,3')}}</div>
+
+      </td>
+      <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.amber}">
+        <img *ngIf="impact === 3 && likelihood === 3 && showFGSs === false " [src]="getMatrixTick(warningColour)" />
+        <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '3,3')}}</div>
+      </td>
+      <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.amber}">
+        <img *ngIf="impact === 4 && likelihood === 3 && showFGSs === false " [src]="getMatrixTick(warningColour)" />
+        <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '4,3')}}</div>
+      </td>
+    </tr>
+    <tr  >
+
+      <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.green}">
+        <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '1,2')}}</div>
+      <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.green}">
+        <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '2,2')}}</div>
+      <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.yellow}">
+        <img *ngIf="impact === 3 && likelihood === 2 && showFGSs === false " [src]="getMatrixTick(warningColour)" />
+        <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '3,2')}}</div>
+      </td>
+      <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.amber}">
+        <img *ngIf="impact === 4 && likelihood === 2 && showFGSs === false " [src]="getMatrixTick(warningColour)" />
+        <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '4,2')}}</div>
+      </td>
+    </tr>
+    <tr >
+
+      <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.green}">
+        <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '1,1')}}</div>
+      <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.green}">
+        <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '2,1')}}</div>
+      <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.yellow}">
+        <img *ngIf="impact === 3 && likelihood === 1 && showFGSs === false " [src]="getMatrixTick(warningColour)" />
+        <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '3,1')}}</div>
+      </td>
+      <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.yellow}">
+        <img *ngIf="impact === 4 && likelihood === 1 && showFGSs === false " [src]="getMatrixTick(warningColour)" />
+        <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '4,1')}}</div>
+      </td>
+    </tr>
+    <tr>
+      <td colSpan={4} class="impactArrow" *ngIf="!showFGSs">
+        <img src={{impactArrow}} />
+      </td>
+      <td colSpan={4} *ngIf="showFGSs">
+        <div class="axesLabel impact">Impact</div>
+      </td>
+    </tr>
+  </table>
+  <p class="impactMatrix" *ngIf="matrixDescriptionText !== '' && descriptor">
+        <span [ngStyle]="{ backgroundColor: warningColour }" class="cell">
+          <img src="{{ imgSrc }}" />
+        </span>
+    <svg viewBox="0 0 100 10">
+      <text x="0" y="7">{{ matrixDescriptionText }}</text>
+    </svg>
+  </p>
+</div>
+

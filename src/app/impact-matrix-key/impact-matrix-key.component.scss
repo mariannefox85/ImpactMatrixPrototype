@@ -1,0 +1,39 @@
+
+
+th {
+  text-align: center;
+  padding: 10px;
+  height: 20%;
+  min-width: 100px;
+  white-space: nowrap;
+}
+
+
+th.vertical-header {
+  text-align: end;
+  width: max-content;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+th.horizontal-header {
+  text-align: center;
+  height: 30px;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+.axesLabel {
+  color: #000;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.impact {
+    text-align: center;
+}
+.likelihood {
+  text-align: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  justify-self: end;
+  padding: 0 0.25em;
+}

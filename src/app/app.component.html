@@ -1,0 +1,50 @@
+
+<div style="width: 20%; margin: 2em">
+<app-impact-matrix
+  [descriptor]="descriptor"
+  [impact]="impact"
+  [likelihood]="likelihood"
+  [colorConfig]="colorConfig"
+
+  [showFGSs]="showFGSs"
+  [riskSource]="riskSource"
+></app-impact-matrix>
+
+
+
+<div style="margin-top: 1em" >
+  <h1>Change inputs</h1>
+  <p *ngIf="!showFGSs" > Show NSWWS Descriptor:
+    <input type="checkbox" [(ngModel)]="descriptor" /> {{descriptor}}</p>
+
+  <p> Show FGS matrix:
+    <input type="checkbox" [(ngModel)]="showFGSs" (change)="hideDescriptor(showFGSs)" /> {{showFGSs}}</p>
+
+  <p > Change green cell colors:
+    <input type="color" #colorInput placeholder="Enter JSON object here" [(ngModel)]="colorConfig.green">
+
+
+  <p > Change yellow cell colors:
+    <input type="color" #colorInput placeholder="Enter JSON object here" [(ngModel)]="colorConfig.yellow">
+  <p > Change amber cell colors:
+    <input type="color" #colorInput placeholder="Enter JSON object here" [(ngModel)]="colorConfig.amber">
+
+
+  <p > Change red cell colors:
+    <input type="color" #colorInput placeholder="Enter JSON object here" [(ngModel)]="colorConfig.red">
+
+  <p>Show impact-matrix key <input type="checkbox" [(ngModel)]="matrixKey" /> {{matrixKey}}</p>
+
+
+
+
+
+</div>
+
+
+  <app-impact-matrix-key *ngIf="matrixKey"
+                           [colorConfig]="shellColorConfig"
+                           [matrixKey] = "matrixKey"
+  ></app-impact-matrix-key>
+</div>
+

@@ -1,0 +1,108 @@
+:host {
+  display: block;
+}
+
+.moImpactMatrix {
+  height: 100%;
+
+table {
+  width: 100%;
+  border-spacing: 1px;
+
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+
+.table-headers {
+  display: flex;
+  height: 0.5em;
+  text-align: center;
+  padding: 10% 1%;
+  display: inline-block;
+  margin: 0 0.1%;
+  font-weight: bold;
+  position: relative;
+}
+.likelihoodArrow {
+  width: 20%;
+  vertical-align: top;
+}
+
+.likelihoodArrow img {
+  width: 85%;
+}
+
+.impactArrow img {
+  width: 85%;
+}
+.axesLabel {
+  color: #007AA9;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+.likelihood {
+  text-align: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  justify-self: end;
+  padding: 0 0.25em;
+}
+  .likelihoodText {
+
+      width: 2.5em
+
+  }
+.impact {
+  text-align: center;
+  padding: 0.25em 0;
+}
+
+.cell {
+  border: 1px solid #a1a0aaff;
+  width: 20%;
+  height: 0.5em;
+  text-align: center;
+  padding: 10% 1%;
+  display: inline-block;
+  margin: 0 0.1%;
+  font-weight: bold;
+  position: relative;
+}
+
+
+.cell img {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+}
+p {
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: auto;
+.cell {
+  width: 10%;
+  min-height: 10%;
+  padding:5% 0.3%
+}
+
+svg {
+  width: 100%;
+text {
+  font-size: 60%;
+}
+}
+& > * {
+    font-size: 60%;
+    margin-right: 5% !important;
+  }
+}
+}
+
+
+
+
+
