@@ -96,7 +96,6 @@ export class ImpactMatrixComponent implements OnInit {
   getFGSPipe(data: any, matrixPosition: string): string {
     const riskLetters = [];
     for (let i = 0; i < data.riskSource.length; i++) {
-      console.log(data.riskSource[i], 'array')
       if (data.riskSource[i].matrixPosition === matrixPosition) {
         riskLetters.push(data.riskSource[i].letter);
       }

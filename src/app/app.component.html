@@ -56,15 +56,15 @@
 <div *ngIf="showFGSs">
 
   <label>Select matrix source letter</label><select name="fgsMatrix" [(ngModel)]="riskSource.riskSource[0].letter">
-    <option value="G">'G'</option>
-    <option value="H">'S'</option>
-    <option value="C">'C'</option>
-  <option value="R">'R'</option>
+    <option value="G">'Ground'</option>
+    <option value="H">'Surface'</option>
+    <option value="C">'Coastal'</option>
+  <option value="R">'River'</option>
 
 
-  <option value="G, S">'G, S'</option>
-  <option value="G,S, R">'G,S, R'</option>
-  <option value="G, S, R, C">'G, S, R, C'</option>
+  <option value="G, S">'Ground, Surface'</option>
+  <option value="G,S, R">'Ground, Surface, River'</option>
+  <option value="G, S, R, C">'Ground, Surface, River, Coastal'</option>
 
 
   </select>

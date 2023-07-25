@@ -32,20 +32,6 @@ riskSource:any = {riskSource: [
       this.descriptor = false
     }
   }
-  // @ts-ignore
-  updateColorConfig(value) {
-    this.colorConfig = value.value;
-    console.log(value.value, 'value')
-    this.userInput = value.value
-    // try {
-    //
-    //   console.log(this.userInput)
-    //   this.colorConfig = this.userInput ;
-    //   console.log("Updated Colorconfig:", this.colorConfig);
-    // } catch (error) {
-    //   console.error("Invalid JSON format");
-    // }
-  }
 }
 
 // {green: 'pink', yellow: 'blue', amber: 'white', red: 'black'}

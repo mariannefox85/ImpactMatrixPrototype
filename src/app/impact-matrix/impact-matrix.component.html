@@ -36,11 +36,11 @@
 
       </td>
       <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.amber}">
-        <img *ngIf="impact === 3 && likelihood === 3 && showFGSs === false " [src]="getMatrixTick(warningColour)" />
+        <img *ngIf="impact === 3 && likelihood === 3 && !showFGSs" [src]="getMatrixTick(warningColour)" />
         <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '3,3')}}</div>
       </td>
       <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.amber}">
-        <img *ngIf="impact === 4 && likelihood === 3 && showFGSs === false " [src]="getMatrixTick(warningColour)" />
+        <img *ngIf="impact === 4 && likelihood === 3 && !showFGSs" [src]="getMatrixTick(warningColour)" />
         <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '4,3')}}</div>
       </td>
     </tr>
@@ -51,11 +51,11 @@
       <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.green}">
         <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '2,2')}}</div>
       <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.yellow}">
-        <img *ngIf="impact === 3 && likelihood === 2 && showFGSs === false " [src]="getMatrixTick(warningColour)" />
+        <img *ngIf="impact === 3 && likelihood === 2 && !showFGSs" [src]="getMatrixTick(warningColour)" />
         <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '3,2')}}</div>
       </td>
       <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.amber}">
-        <img *ngIf="impact === 4 && likelihood === 2 && showFGSs === false " [src]="getMatrixTick(warningColour)" />
+        <img *ngIf="impact === 4 && likelihood === 2 && !showFGSs" [src]="getMatrixTick(warningColour)" />
         <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '4,2')}}</div>
       </td>
     </tr>
@@ -66,11 +66,11 @@
       <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.green}">
         <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '2,1')}}</div>
       <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.yellow}">
-        <img *ngIf="impact === 3 && likelihood === 1 && showFGSs === false " [src]="getMatrixTick(warningColour)" />
+        <img *ngIf="impact === 3 && likelihood === 1 && !showFGSs" [src]="getMatrixTick(warningColour)" />
         <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '3,1')}}</div>
       </td>
       <td class="cell"[ngStyle]="{ backgroundColor: colorConfig.yellow}">
-        <img *ngIf="impact === 4 && likelihood === 1 && showFGSs === false " [src]="getMatrixTick(warningColour)" />
+        <img *ngIf="impact === 4 && likelihood === 1 && !showFGSs" [src]="getMatrixTick(warningColour)" />
         <div *ngIf="showFGSs">{{getFGSPipe(riskSource, '4,1')}}</div>
       </td>
     </tr>
@@ -92,4 +92,3 @@
     </svg>
   </p>
 </div>
-
